@@ -17,6 +17,16 @@ class TaskController {
             })
             .catch(next)
     }
+
+    async updateTaskById(req, res, next) {
+        const taskId = parseInt(req.params.id);
+
+        ToDoServices.updateTask(taskId, req.body)
+            .then(task => {
+                res.json({ task })
+            })
+            .catch(next)
+    }
 }
 
 

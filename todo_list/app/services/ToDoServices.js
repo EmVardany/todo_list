@@ -22,6 +22,20 @@ class ToDoServices {
             console.error(`Something went wrong: ${err}`);
         }
     }
+
+    async updateTask(id, data) {
+        try {
+            await (await tasks())
+                .findOneAndUpdate(
+                    {id: id},
+                    {
+                        $set: { ...data }
+                    }
+                )
+        } catch (err) {
+            console.error(`Something went wrong: ${err}`);
+        }
+    }
 }
 
 module.exports = new ToDoServices();
