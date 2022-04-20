@@ -8,6 +8,15 @@ class TaskController {
             })
             .catch(next);
     }
+
+    async createNewTask(req, res, next) {
+        ToDoServices.createTask(req.body.task)
+            .then(task => {
+                console.log(task);
+                res.json({ task })
+            })
+            .catch(next)
+    }
 }
 
 
