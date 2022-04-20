@@ -27,6 +27,13 @@ class TaskController {
             })
             .catch(next)
     }
+
+    async deleteById(req, res) {
+        const taskId = parseInt(req.params.id);
+
+        ToDoServices.deleteTasks(taskId)
+            .catch(next)
+    }
 }
 
 

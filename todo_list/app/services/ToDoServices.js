@@ -36,6 +36,15 @@ class ToDoServices {
             console.error(`Something went wrong: ${err}`);
         }
     }
+
+    async deleteTasks(id) {
+        try {
+            await (await tasks())
+                .deleteOne({id: id})
+        } catch (err) {
+            console.error(`Something went wrong: ${err}`);
+        }
+    }
 }
 
 module.exports = new ToDoServices();
