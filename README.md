@@ -6,3 +6,4 @@ To set up this project, you need:
 3. Start the server with `node server.js`
 
 #### Main architecture
+![image](https://user-images.githubusercontent.com/61315952/165391178-df5cc3d2-baa4-48e9-9d1f-2b154c973fd5.png)
